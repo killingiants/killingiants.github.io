@@ -1,0 +1,32 @@
+a.link
+  position: relative
+  transition: clip-path 275ms ease
+
+  &:hover span::before, &:focus span::before
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+  span
+    position: relative
+    display: inline-block
+    color: -color(text)
+
+    &::before
+      position: absolute
+      content: attr(data-content)
+      color: -color(primary)
+      text-decoration: underline
+      text-decoration-line: none
+      text-decoration-color: -color(primary)
+      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+      transition: clip-path 275ms ease
+
+    &.dotted::before
+      text-decoration-style: dotted
+    &.dashed::before
+      text-decoration-style: dashed
+    &.double::before
+      text-decoration-style: double
+    &.wavy::before
+      text-decoration-style: wavy
+    &.line--through::before
+      text-decoration-line: line-through

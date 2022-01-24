@@ -1,0 +1,58 @@
+@tailwind base
+
+@import './utils/index'
+
+@import './reset'
+
+html, body, #app
+  height: 100%
+  width: 100%
+  overflow: hidden !important
+
+body
+  font-family: "poppins" !important
+  font-weight: normal !important
+  font-style: normal !important
+  font-size: -var(body-fs) !important
+  color: -color('text') !important
+  background-color: -color(background) !important
+  margin: 0
+  padding: 0
+
+  .full
+    @apply h-full w-full
+
+  .no-select
+    -webkit-user-select: none !important
+
+  .drag
+    -webkit-app-region: drag
+
+  .no-drag
+    -webkit-app-region: no-drag
+
+  .bg_blur
+    backdrop-filter: saturate(180%) blur(6px)
+  .bg_blur-light
+    backdrop-filter: saturate(100%) blur(2px)
+
+  .remove-transition
+    *, *:after, *:before
+      transition: all 0s !important
+
+  .center
+    @apply flex items-center justify-center
+
+  .ellipsis
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  .logo
+    fill: -color('text')
+    &-ac
+      fill: -color('text-ac')
+    &-primary
+      fill: -color('primary')
+
+  @include icon()

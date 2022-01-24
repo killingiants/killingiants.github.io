@@ -1,0 +1,25 @@
+.text-accent
+  color: -color('text-ac')
+.text-primary
+  color: -color('primary')
+.text-stroke
+  display: inline-block
+  background-clip: text
+  // background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f)
+  color: -color('background')
+  font-size: inherit
+  font-weight: inherit
+  letter-spacing: inherit
+  -webkit-text-stroke-color: -color('text')
+  -webkit-text-stroke-width: .025em
+  -webkit-user-select: none !important
+  &-ac
+    -webkit-text-stroke-color: -color('text-ac')
+  &-primary
+    -webkit-text-stroke-color: -color('primary')
+  &-bg-ac
+    color: -color('background-ac')
+  &-str-m
+    -webkit-text-stroke-width: .04em
+  &-str-xl
+    -webkit-text-stroke-width: .06em
