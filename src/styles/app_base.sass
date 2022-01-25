@@ -56,3 +56,43 @@ body
       fill: -color('primary')
 
   @include icon()
+
+  #app
+    position: relative
+    @apply flex flex-col
+    .bg
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      opacity: .5
+    #navbar, .app-content section
+      padding: 0 -var(default-padding)
+    #navbar
+      height: 65px
+      padding: 0 -var(default-padding)
+      .brand
+        .text
+          @apply font-bold
+          color: -color(text-ac)
+      button.quote
+        height: 42px
+        background: linear-gradient(to right bottom, -color(background), -color(primary, .5), -color(background))
+        border-radius: 12px
+        .td-button__content
+          padding: 0 15px
+    .app-content
+      section
+        .with-indicator
+          position: relative
+          display: inline-block
+          &::before
+            content: ''
+            position: absolute
+            top: 55%
+            left: 110%
+            height: 3px
+            width: 50%
+            background: linear-gradient(to right, -color(primary), -color(background))
+            transform: translateY(-55%)
+        @import './sections/hero'

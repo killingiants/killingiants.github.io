@@ -30,6 +30,10 @@ import ProductsIcon from './products.vue';
 import squaresIcon from './3square.vue';
 import ShoppingCartIcon from './shoppingCart.vue';
 import TruckFastIcon from './truckFast.vue';
+import InstagramIcon from './instagram.vue';
+import FacebookIcon from './facebook.vue';
+import WhatsappIcon from './whatsapp.vue';
+import TelegramIcon from './telegram.vue';
 
 export {
   ArrowRightIcon,
@@ -64,4 +68,8 @@ export {
   squaresIcon,
   ShoppingCartIcon,
   TruckFastIcon,
+  InstagramIcon,
+  FacebookIcon,
+  WhatsappIcon,
+  TelegramIcon,
 };
