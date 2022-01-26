@@ -83,16 +83,59 @@ body
           padding: 0 15px
     .app-content
       section
-        .with-indicator
-          position: relative
-          display: inline-block
-          &::before
-            content: ''
-            position: absolute
-            top: 55%
-            left: 110%
-            height: 3px
-            width: 50%
-            background: linear-gradient(to right, -color(primary), -color(background))
-            transform: translateY(-55%)
+        .texts
+          max-width: 45%
+          padding-left: -var(default-padding)
+          .with-indicator
+            position: relative
+            display: inline-block
+            text-transform: uppercase
+            &::before
+              content: ''
+              position: absolute
+              top: 55%
+              left: 110%
+              height: 3px
+              width: 50%
+              background: linear-gradient(to right, -color(primary), -color(background))
+              transform: translateY(-55%)
+          .sm
+            margin-bottom: 5px
+          .title
+            @apply font-extrabold
+            font-size: -var(extra-header-fs)
+          .desc
+            max-width: 85%
+            margin: 10px 0 30px
+          button
+            @apply font-semibold
+            height: 45px
+            .link
+              margin-left: 10px
+              display: block
+              &, span
+                @apply h-full
+          .socials
+            margin-bottom: 35px
+            a
+              &:not(:last-child)
+                margin-right: 20px
+              svg
+                height: 24px
+                width: 24px
+          &.t-right
+            padding-left: 0
+            padding-right: -var(default-padding)
+            .with-indicator::before
+              content: ''
+              position: absolute
+              top: 55%
+              left: auto
+              right: 110%
+              height: 3px
+              width: 50%
+              background: linear-gradient(to right, -color(primary), -color(background))
+              transform: translateY(-55%) rotate(-180deg)
+
         @import './sections/hero'
+        @import './sections/about'

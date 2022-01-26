@@ -8,13 +8,18 @@
     &.active
       color: -color('primary')
       @apply font-bold
+      & ~ .nav-indicator
+        opacity: 1
+    //   height: 0
+    //   transition: all -var('navbar-animation-duration') ease-in-out
   .nav-indicator
     position: absolute
     top: 0
     left: 0
     height: -var('navbar-nav-indicator-height')
     min-width: 40px
-    transition: left -var('navbar-animation-duration') ease-in-out
+    opacity: 0
+    transition: all -var('navbar-animation-duration') ease-in-out
     &::before
       content: ''
       position: absolute
