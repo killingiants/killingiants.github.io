@@ -5,8 +5,9 @@ import ServicesComponent from './../sections/services.vue';
 import PortfolioComponent from './../sections/portfolio.vue';
 import ContactComponent from './../sections/contact.vue';
 import TeamsComponent from './../sections/teams.vue';
-import BlogsComponent from './../sections/blogs/blogs.vue'
-import ArticleComponent from './../sections/article/article.vue'
+import MemberComponent from './../sections/member.vue';
+import BlogsComponent from './../sections/blogs/blogs.vue';
+import ArticleComponent from './../sections/article/article.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -34,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/teams',
     name: 'teams',
     component: TeamsComponent,
+  },
+  {
+    path: '/teams/member',
+    name: 'member',
+    component: MemberComponent
   },
   {
     path: '/blogs',

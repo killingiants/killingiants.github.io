@@ -101,7 +101,3 @@
         </li>
     </ul>
 </template>
-
-<script lang="ts">
-
-</script>

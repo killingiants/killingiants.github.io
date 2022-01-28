@@ -1,22 +1,20 @@
 <template>
     <main class="mt-14 px-12">
-        <article>
-            <header class="bg-[url('/src/assets/images/blogs/single-article-featured-image.png')] h-80 relative">
-                <div class="absolute -bottom-20 ml-20 space-y-5">
-                    <div class="max-w-[55%] space-y-8">
+        <article class="post">
+            <header class="bg-[url('/src/assets/images/blogs/single-article-featured-image.png')] relative">
+                <div class="post-overview absolute -bottom-24 ml-12 space-y-5">
+                    <div class="space-y-8">
                         <h2 class="text-4xl font-extrabold">Microsoft to buy Activision Blizzard for $68.7 billion</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-x-3">
-                            <img src="./../../assets/images/blogs/article-author3.jpg" alt="">
-                            <h4>James Robert</h4> . <span><time datetime="2022-01-22">22 jan 2022</time></span>
-                        </div>
-                        <div class="space-x-5">
-                            <span><i></i> 300 like</span>
-                            <span><i></i> Share</span>
-                        </div>
+                    <div class="flex items-center gap-x-3">
+                        <img src="./../../assets/images/blogs/article-author3.jpg" alt="">
+                        <h4>James Robert</h4> . <span><time datetime="2022-01-22">22 jan 2022</time></span>
                     </div>
+                </div>
+                <div class="like-share space-x-5 absolute -bottom-12 right-9">
+                    <span><img src="/vectors/heart.svg" alt=""> 300 like</span>
+                    <span><img src="/vectors/share.svg" alt=""> Share</span>
                 </div>
             </header>
             <section class="mt-40 mx-6 space-y-12">
@@ -39,21 +37,21 @@
                 <li>
                     <article class="space-y-4">
                         <img src="./../../assets/images/blogs/article-featured-image-placeholder.jpg" alt="">
-                        <h3>Lorem Ipsum ?</h3>
+                        <h3><a href="#">Lorem Ipsum ?</a></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </article>
                 </li>
                 <li>
                     <article class="space-y-4">
                         <img src="./../../assets/images/blogs/article-featured-image-placeholder.jpg" alt="">
-                        <h3>Lorem Ipsum ?</h3>
+                        <h3><a href="#">Lorem Ipsum ?</a></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at varius vel. Maecenas ultricies mi eget mauris... </p>
                     </article>
                 </li>
                 <li>
                     <article class="space-y-4">
                         <img src="./../../assets/images/blogs/article-featured-image-placeholder.jpg" alt="">
-                        <h3>Lorem Ipsum ?</h3>
+                        <h3><a href="#">Lorem Ipsum ?</a></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
                     </article>
                 </li>
@@ -61,3 +59,27 @@
         </div>
     </main>
 </template>
+
+<style scoped>
+    .post header {
+        background-image: url('/src/assets/images/blogs/single-article-featured-image.png');
+        background-position: center center;
+        height: 450px;
+
+    }
+    .post-overview {
+        width: 58%;
+        padding: 30px 40px;
+        background: linear-gradient(22.44deg, #FFF 38.18%, rgba(200, 195, 182, 0.5)108.76%);
+        box-shadow: 0px 25px 58px 54px rgba(0, 0, 0, 0.94);
+        /*backdrop-filter: blur(100px);*/
+        clip-path: polygon(0% 0%, 100% 0px, 99.99% 78.68%, 83.39% 100%, 0% 100%);
+
+        /* Note: backdrop-filter has minimal browser support */
+        /*transform: matrix(1, 0, 0, -1, 0, 0);*/
+    }
+
+    .like-share > span img {
+        display: inline;
+    }
+</style>
