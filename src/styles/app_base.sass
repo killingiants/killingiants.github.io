@@ -65,26 +65,26 @@ body
       top: 0
       left: 0
       z-index: -1
-      opacity: .5
+      opacity: .65
     #navbar, .app-content section
       padding: 0 -var(default-padding)
     #navbar
-      height: 65px
+      height: 70px
       padding: 0 -var(default-padding)
       .brand
         .text
           @apply font-bold
           color: -color(text-ac)
       button.quote
-        height: 42px
+        height: 40px
         background: linear-gradient(to right bottom, -color(background), -color(primary, .5), -color(background))
-        border-radius: 12px
+        border-radius: 10px
         .td-button__content
-          padding: 0 15px
+          padding: 0 10px
     .app-content
       section
         .texts
-          max-width: 45%
+          // max-width: 45%
           padding-left: -var(default-padding)
           .with-indicator
             position: relative
@@ -139,3 +139,6 @@ body
 
         @import './sections/hero'
         @import './sections/about'
+        @import './sections/services'
+        @import './sections/portfolio'
+        @import './sections/contact'

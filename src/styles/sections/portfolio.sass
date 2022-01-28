@@ -1,0 +1,61 @@
+&#portfolio
+	.project
+		position: relative
+		.info
+			width: 60%
+			.title
+				font-size: 50px
+			.desc
+				max-width: 55%
+				margin-bottm: 0
+			button
+				.td-button__content
+					padding: 0 15px
+			.tools
+				margin: 25px 0 50px
+				img
+					height: 24px
+					width: 24px
+					filter: grayscale(0)
+					transition: .5s
+					&:not(:last-child)
+						margin-right: 12px
+					&:hover
+						filter: grayscale(1)
+						transition: .5s
+		.image
+			position: absolute
+			top: 35px
+			bottom: 35px
+			right: 9.3%
+			// height: 100%
+			width: 55%
+			background: -color(background-two)
+			// transform: translateY(-50%)
+			z-index: -1
+		.counter
+			position: absolute
+			bottom: 55px
+			right: 0
+			line-height: 1
+			p
+				&.current
+					font-size: 150px
+					color: -color(primary)
+					@apply font-extrabold
+		.indicator
+			position: absolute
+			top: 70px
+			right: 0
+			span
+				display: block
+				height: 5px
+				width: 5px
+				background: -color(background-two)
+				border-radius: 50%
+				&.active
+					border-radius: 50px
+					height: 25px
+					background: -color(primary)
+				&:not(:last-child)
+					margin-bottom: 8px

@@ -46,6 +46,9 @@
       case 1:
         pageName = 'services';
         break;
+      case 2:
+        pageName = 'portfolio';
+        break;
       case links.length - 1:
         pageName = 'contact';
         break;
