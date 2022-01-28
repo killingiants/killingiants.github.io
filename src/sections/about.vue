@@ -3,7 +3,7 @@
 		<div class="thumb flex-1 h-full">
 			<img src="/vectors/about.svg" alt="">
 		</div>
-		<div class="texts t-right flex flex-col h-full items-end">
+		<div class="texts t-right flex flex-col h-full items-end w-[45%]">
 			<div class="flex flex-col my-auto items-end text-right">
 				<p class="sm with-indicator">Who are we ?</p>
 				<h1 class="title font-bold">We are skilled in userExperience & Interface</h1>

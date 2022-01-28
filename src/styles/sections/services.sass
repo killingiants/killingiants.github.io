@@ -1,0 +1,44 @@
+&#services
+	.thumb
+		@apply flex items-center justify-start
+		padding: 30px -var(default-padding)
+		padding-right: 0
+		.slide
+			position: relative
+			height: 95%
+			width: 85%
+			.img, .img__next
+				position: absolute
+				top: 50%
+				left: 0
+				height: 100%
+				width: 100%
+				transform: translateY(-50%)
+			.img
+				background: -color(background-two)
+				z-index: 2
+			.img__next
+				height: 80%
+				left: auto
+				right: -20px
+				background: -color(background-third)
+				transform: translateY(-55%)
+			.slide__text
+				position: absolute
+				bottom: 20px
+				left: 20px
+				height: 42px
+				z-index: 4
+				font-size: -var(title-fs)
+				font-weight: bold
+				color: -color(text-ac)
+			button
+				position: absolute
+				bottom: 20px
+				right: -20px
+				height: 42px
+				z-index: 3
+				.td-button__content
+					padding: 0 15px
+					@include icon($size: 18, $color: -color(light))
+						margin-right: 10px

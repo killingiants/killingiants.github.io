@@ -1,0 +1,38 @@
+&#contact
+	padding: 0 !important
+	.texts
+		max-width: auto !important
+		@apply flex-1
+	.form
+		width: 42%
+		padding-right: -var(default-padding)
+		form
+			width: 100%
+			.input-row
+				@apply flex items-center w-full
+				&:not(:last-child)
+					margin-bottom: 20px
+				.input
+					@apply flex-1
+					&:not(:last-child)
+						margin-right: 8px
+					p.label
+						margin-bottom: 5px
+					input, textarea
+						height: 52px
+						width: 100%
+						padding: 0 15px
+						border-radius: 12px
+						background: linear-gradient(to right, -color(background-two, .75), -color(background))
+						color: -color(text-ac)
+						&:focus
+							outline: none
+					textarea
+						height: auto
+						min-height: 80px
+						padding: 15px
+		.main-btn
+			height: 50px
+			margin-bottom: 30px
+			.td-button__content
+					padding: 0 15px

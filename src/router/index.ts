@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import HeroComponent from './../sections/hero.vue';
 import AboutComponent from './../sections/about.vue';
 import ServicesComponent from './../sections/services.vue';
+import PortfolioComponent from './../sections/portfolio.vue';
 import ContactComponent from './../sections/contact.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -19,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/services',
     name: 'services',
     component: ServicesComponent,
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: PortfolioComponent,
   },
   {
     path: '/contact',
