@@ -1,14 +1,14 @@
 <template>
     <article class="space-y-6">
-        <img :src="featuredImageUri" alt="">./../../assets/images/blogs/article_featured_image.jpg
-        <h2 class="text-4xl font-extrabold">{{ articleTitle }}</h2>
-        <p class="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <img v-if="featuredImage" :src="featuredImage" alt="">
+        <h2 class="text-3xl font-extrabold">{{ postTitle }}</h2>
+        <p class="text-base">{{ postShort }}</p>
         <div class="flex gap-x-3 items-center">
             <div>
-                <img src="./../../assets/images/blogs/article-author.jpg" alt="">
+                <img :src="author.photo" alt="">
             </div>
             <div class="text-base">
-                <h3 class="text-[#f7a704]">{{ author }}</h3>
+                <h3 class="text-[#f7a704]">{{ author.name }}</h3>
                 <p class="">Reporter . <time datetime="2022-01-22" class="text-black font-semibold">{{ pubDate }}</time></p>
             </div>
         </div>
@@ -18,17 +18,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-    name: 'MinArticle',
+    name: 'post',
     props: {
-        hasFeaturedImage: {
-            type: Boolean,
-            default: false,
-        },
-        featuredImageUri: {
+        featuredImage: {
             type: String,
             default: ""
         },
-        articleTitle: {
+        postTitle: {
+            type: String,
+            default: "",
+        },
+        postShort: {
             type: String,
             default: "",
         },
