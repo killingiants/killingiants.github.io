@@ -1,0 +1,67 @@
+{
+	"nav_links": {
+		"about": "about",
+		"services": "services",
+		"portfolio": "portfolio",
+		"actuality": "actuality",
+		"team": "The team",
+		"contact": "contact us."
+	},
+	"langs": {
+		"english": "English"
+	},
+	"sections": {
+		"hero": {
+			"presentation_texts": {
+				"prefix": "We are",
+				"suffix": "agency",
+				"1": "Coding",
+				"2": "UI design",
+				"3": "UX design"
+			},
+			"title": "Tailored to deliver the best for your business",
+			"desc": "By applying behavioral science to user  experience, we design engaging digital products that people love to use. Keep in mind, users come for the features but they stay for the comfort your product offers to them. The product can give them what they need but if it is not easy to use, they will left your product. This is our purpose, make your great product easy to use, useful, beautiful, simple, enjoyable for your user.",
+			"main_button": "Explore our portfolio"
+		},
+		"about": {
+			"sm": "UI Agency",
+			"title": "From your dreams to reality.",
+			"desc1": "Killing Giants is a user experience design agency with a mission to provide meaning fuluser-centred experiences that solve problems through beautiful design, intuitive interfacesand technical innovation.",
+			"desc2": "Our approach is based on improving the relationship between people, processes and technology through immersive discovery workshops, brand strategy, UX/UI design, user research and testing, front-end, mobile and app development.",
+			"main_button": "Contact Us."
+		},
+		"services": {
+			"sm": "Our services.",
+			"main_button": "Contact Us.",
+			"services": {
+				"1": {
+					"title": "From your dreams to code.",
+					"name": "UX Design.",
+					"desc": "For complex logic that involves reactive data, computed property is used. That is, whenever the user enters a text in the text box, it is passed into the marked function from the marked library which compiles the markdown into HTML and the computed property re-renders it to our app instantly as it changes. So the next thing we want to do is render this markdown in our project and it is very straight forward or rather very simple to do so in Vue. We will add this line of code below to our template to create a text box where we can enter text. Recall we mentioned that the text will be passed to the function created inside the computed property."
+				},
+				"2": {
+					"title": "From your dreams to code.",
+					"name": "UI Design.",
+					"desc": "For complex logic that involves reactive data, computed property is used. That is, whenever the user enters a text in the text box, it is passed into the marked function from the marked library which compiles the markdown into HTML and the computed property re-renders it to our app instantly as it changes. So the next thing we want to do is render this markdown in our project and it is very straight forward or rather very simple to do so in Vue. We will add this line of code below to our template to create a text box where we can enter text. Recall we mentioned that the text will be passed to the function created inside the computed property."
+				},
+				"3": {
+					"title": "From your dreams to code.",
+					"name": "Coding.",
+					"desc": "For complex logic that involves reactive data, computed property is used. That is, whenever the user enters a text in the text box, it is passed into the marked function from the marked library which compiles the markdown into HTML and the computed property re-renders it to our app instantly as it changes. So the next thing we want to do is render this markdown in our project and it is very straight forward or rather very simple to do so in Vue. We will add this line of code below to our template to create a text box where we can enter text. Recall we mentioned that the text will be passed to the function created inside the computed property."
+				}
+			}
+		},
+		"team": {
+			"sm": "UI Agency",
+			"title": "Award winning UX team.",
+			"desc1": "We are small , distributed team. With our headquarters located in Lomé, Togo. Our team has come together through the passion of solving complicated problems, through design and development.",
+			"desc2": "We work closely with our clients and their customers to truly understand the values (et les attentes) of all parties. We help business bridge this connection and enhance customer experience.",
+			"main_button": "Meet all members."
+		},
+		"contact": {
+			"sm": "UI Agency",
+			"title": "Let’s work together.",
+			"desc": "…and create experiences that engage your audience & elevate your brand. We will team up with your business and together we will overcome your current challenge and take your business into the next level. As a full-service design agency we work closely with our clients to define, design and develop transformative user experiences across all platforms and in order to do that, we pay special attention to how your product looks and feels."
+		}
+	}
+}

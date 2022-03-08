@@ -1,6 +1,5 @@
 <template>
-	<div class="social-icon">
-		<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="6" fill="url(#paint0_radial_238_507)"/>
 <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="6" fill="url(#paint1_radial_238_507)"/>
 <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="6" fill="url(#paint2_radial_238_507)"/>
@@ -27,5 +26,4 @@
 </defs>
 </svg>
 
-	</div>
 </template>

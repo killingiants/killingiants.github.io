@@ -227,31 +227,3 @@
     &.td-button--active
       transform: translate(0,-3px)
       box-shadow: 0px 8px 35px 0px rgba(0,0,0, .085)
-
-  &--class
-    background: transparent
-    color: -color(text-ac)
-    box-shadow: none !important
-    .td-button__content
-      .icon
-        position: relative
-        &, &::before
-          height: 35px
-          width: 35px
-        &::before
-          content: ''
-          position: absolute
-          top: 50%
-          left: 0
-          transform: translateY(-50%)
-          background: -color(primary)
-          border-radius: 50%
-          z-index: -1
-        svg
-          height: 24px
-          width: 20px
-          transform: translateX(50%)
-
-  &--dark
-    background: -color(background-third)
-    color: -color(light)

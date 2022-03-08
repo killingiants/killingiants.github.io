@@ -16,6 +16,7 @@
       border && 'td-button--border',
       transparent && 'td-button--transparent',
       shadow && 'td-button--shadow',
+      active && 'td-button--active',
     ]"
     @mousedown="mousedown"
     @click="click"
@@ -41,7 +42,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { ripple, rippleCut, rippleReverse } from '@/utils/ui';
+import { ripple, rippleCut, rippleReverse } from '/@/utils/ui';
 
 export default defineComponent({
   name: 'TdButton',
@@ -71,6 +72,7 @@ export default defineComponent({
     border: { type: Boolean, default: false },
     transparent: { type: Boolean, default: false },
     shadow: { type: Boolean, default: false },
+    active: { type: Boolean, default: false },
     animationType: {
       type: String,
       default: '',

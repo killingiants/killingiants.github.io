@@ -1,13 +1,14 @@
 <template>
   <div :class="`navbar__ navbar__${id} flex flex-row items-center ${nvClass} ${'indicator-at-' + indicatorPosition}`">
-    <a
+    <router-link
+      exact
       v-for="(link, index) in links"
       :key="index"
       class="nav-item capitalize"
-      :class="{'active': modelValue === index}"
-      @click.prevent="update($event, index)"
-    >{{ link }}</a>
-    <div class="nav-indicator" />
+      :to="{name: link.name}"
+      @click="update($event, index)"
+    >{{ link.text }}</router-link>
+    <!-- <div class="nav-indicator" /> -->
   </div>
 </template>
 
@@ -21,10 +22,6 @@
     name: 'AppNavbar',
 
     props: {
-      modelValue: {
-        type: Number,
-        default: 0,
-      },
       links: {
         type: Array,
         required: true,
@@ -39,8 +36,6 @@
       },
     },
 
-    emits: ['update:modelValue'],
-
     data: function () {
       return {
         id: '',
@@ -49,7 +44,7 @@
     },
 
     watch: {
-      links: function (newVal, oldVal) {
+      links: function () {
         this.initIndicator();
       },
     },
@@ -71,7 +66,6 @@
       },
 
       update(e: any, i: number) {
-        this.$emit('update:modelValue', i);
         const id = $(`${this.navbar} .nav-indicator`);
 
         if (id != null) {

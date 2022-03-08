@@ -6,8 +6,6 @@ import logo from './logo.vue';
 import navbar from './navbar.vue';
 import icon from './icons/icon.vue';
 import * as icons from './icons';
-import post from './post.vue';
-
 
 const components = {
   loader,
@@ -15,14 +13,15 @@ const components = {
   navbar,
   icon,
   ...icons,
-  post,
 };
 
 function registerComponents(instance: any) {
+  // eslint-disable-next-line vue/component-definition-name-casing
   instance.component('td-button', tdButton);
+  // eslint-disable-next-line vue/component-definition-name-casing
   instance.component('td-link', tdLink);
+  // eslint-disable-next-line vue/component-definition-name-casing
   instance.component('td-dialog', dialog);
-  instance.component('post', post);
 
   Object.entries(components).forEach((c) => instance.component(c[0], c[1]));
 }

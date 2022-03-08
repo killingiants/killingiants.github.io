@@ -1,0 +1,793 @@
+#app
+  position: relative
+
+  #bg
+    &, img
+      @apply absolute w-full h-full
+      top: 0
+      left: 0
+    img
+      object-fit: cover
+      opacity: 1
+  
+  #AppNavbar, section
+    padding: 0 -var(default-padding)
+
+  #AppNavbar
+    @apply flex flex-row justify-between items-center w-full
+    position: fixed
+    top: 0
+    left: 0
+    height: -var(navbar-height)
+    z-index: 1000
+    background: transparent
+
+    .brand
+      @apply h-full
+      cursor: pointer
+      .text
+        @apply font-bold
+        font-size: -var(subtitle-fs)
+        color: -color(text-ac)
+      &.router-link-exact-active
+        .text
+          color: -color('primary')
+
+    .navbar__
+      @apply h-full
+    
+    button
+      background: transparent
+      box-shadow: none
+      &.theme
+        @include icon($size: 18px, $color: -color(text))
+    .translate
+      position: relative
+      padding-left: 15px
+      margin-left: 5px
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        height: 35%
+        width: 1px
+        background: -color(text)
+
+    &.onTop
+      background: -color(background, .5)
+      backdrop-filter: blur(15px)
+
+
+  .app_content
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    @apply w-full 
+  section
+    @apply flex flex-1 items-center justify-between h-full w-full
+    position: absolute
+    top: 0
+    left: 0
+    // transform: translateY(-50%) !important
+    padding-top: -var(navbar-height)
+    &.raw
+      padding-top: 0
+
+    .typed-text
+      color: -color(primary)
+    .cursor
+      display: inline-block
+      margin-left: 3px
+      width: 2px
+      background-color: -color(primary)
+      animation: cursorBlink .85s infinite
+    .cursor.typing
+      animation: none
+
+    .section_content
+      width: 45%
+      max-width: 45%
+    .texts
+      display: block
+      overflow: hidden
+      .sm
+        p
+          display: inline-block
+          position: relative
+          text-transform: uppercase
+          &::before
+            content: ''
+            position: absolute
+            top: 50%
+            right: -65%
+            transform: translateY(-50%)
+            height: 3px
+            width: 50%
+            background: linear-gradient(to right, -color(primary), -color(background))
+        &.reversed
+          p
+            &::before
+              right: auto
+              left: -65%
+              transform: translateY(-50%)
+              background: linear-gradient(to right, -color(background), -color(primary))
+      .title
+        margin: 5px 0 10px
+        font-size: -var(extraheader-fs)
+        @apply font-semibold
+        color: -color(text-ac)
+      .desc
+        font-size: -var(medium-fs)
+        &.big
+          font-size: -var(subtitle-fs)
+      .title, .desc
+        position: relative
+        display: inline-block
+        overflow: hidden
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          width: 100%
+          height: 100%
+          background: -color(primary)
+          animation: a-ltr-after 1.2s cubic-bezier(.77,0,.18,1) forwards
+          transform: translateX(-101%)
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 100%
+            background: -color(background)
+            animation: a-ltr-before 1.5s cubic-bezier(.77,0,.18,1) forwards
+            transform: translateX(0)
+      .title::before, .title::after
+        animation-delay: .65s
+      .desc::before, .desc::after
+        animation-delay: .85s
+
+      .main-button
+        height: 50px
+        position: relative
+        margin-top: 3%
+        background: transparent
+        color: -color(text-ac)
+        overflow: visible
+        box-shadow: none !important
+        .td-button__content
+          justify-content: start
+          padding: 0
+          .circle__
+            position: relative
+            width: 40px
+            .icon, &::before
+              position: absolute
+              top: 50%
+              transform: translateY(-50%)
+            .icon
+              right: -30px
+              align-items: flex-end
+              transition: .3s
+              svg
+                height: 35px
+                width: 70px
+                &, path
+                  stroke-width: 2px
+                path
+                  stroke: -color(text-ac)
+            &::before
+              content: ''
+              left: 0
+              height: 35px
+              width: 35px
+              border-radius: 50%
+              background: -color(primary)
+              z-index: -1
+              opacity: 0.65
+              transition-duration: .3s
+          span
+            margin-left: 15px
+            font-size: -var(body-fs)
+            @apply font-semibold
+            transition: .3s
+        &.not-special
+          .td-button__content
+            justify-content: center
+            padding: 0 25px
+        &.black
+          background: -color(primary)
+          color: -color(light)
+      &:hover
+        .td-button__content
+          .circle__
+            &::before
+              height: 40px
+              width: 40px
+              transition-duration: .3s
+            .icon
+              right: -35px
+              transition: .3s
+          span
+            margin-left: 20px
+            transition: .3s
+    .socials
+      margin: 5% 0
+      .brand_icon
+        background: -color(background)
+        &:not(:last-child)
+          margin-right: 25px
+        svg
+          height: 22px
+          width: 22px
+    .brands
+      margin: 5% 0
+      &, .brand
+        @apply flex items-center
+      .brand
+        // height: 25px
+        // width: 150px
+        overflow: hidden
+        img
+          height: 30px
+          filter: grayscale(1)
+          opacity: 0.65
+          transition-duration: .5s
+        &:not(:last-child)
+          margin-right: 25px
+        &:hover
+          img
+            filter: grayscale(0)
+            opacity: 1
+            transition-duration: .5s
+
+
+    &#hero, &#about
+      position: relative
+
+    &#hero
+      padding-right: 0
+      .thumb
+        position: absolute
+        height: 100%
+        width: 65%
+        right: 0
+        z-index: 1
+        img
+          position: absolute
+          bottom: 0
+          right: 0
+          height: 100%
+          width: 100%
+          object-fit: cover
+      .section_content
+        width: 50%
+        max-width: 50%
+        .title::before, .title::after
+          animation-delay: .5s
+        .desc::before, .desc::after
+          animation-delay: 1s
+        .title
+          max-width: 95%
+        
+    &#about
+      .thumb
+        img
+          position: absolute
+          top: 50%
+          // left: 50%
+          left: 0
+          // transform: translate(-50%, -50%)
+          transform: translateY(-50%)
+          object-fit: cover
+          height: 100%
+          width: 85%
+      .section_content
+        width: 50%
+        max-width: 50%
+
+    &#contact
+      .section_content
+        width: auto
+        max-width: 100%
+        padding-right: 5%
+        @apply flex-1
+        .sep
+          margin: 35px 0 10px
+          height: 2px
+          width: 8%
+          background: -color(background-ac2)
+        .brands
+          .brand
+            img
+              height: 40px
+              opacity: 0.6
+              backdrop-filter: blur(5px)
+      form
+        width: 45%
+        max-width: 45%
+        .input-row
+          @apply w-full flex flex-1 items-center justify-end
+          &:not(:last-child)
+            margin-bottom: 20px
+          .input
+            @apply flex flex-col flex-1
+            &:not(:last-child)
+              margin-right: 12px
+            label
+              margin-bottom: 5px
+              color: -color(text-ac)
+            input, textarea
+              height: 55px
+              width: 100%
+              background: linear-gradient(to right bottom, -color(background-ac), -color(background))
+              backdrop-filter: blur(5px)
+              border-radius: 2px
+              padding: 0 15px
+            textarea
+              height: auto
+              min-height: 55px
+              max-height: 120px
+              padding: 15px
+        .main-button
+          min-width: 120px
+
+    &#team
+      .back_sec
+        width: 5%
+        button
+          width: 210px
+          background: transparent
+          position: absolute
+          top: 50%
+          left: 0
+          transform: translateY(50%) rotate(-90deg)
+          transform-origin: top left
+          box-shadow: none !important
+          @apply font-semibold
+          color: -color(text-ac)
+          .td-button__content
+            padding: 0
+            justify-content: start
+          .esc
+            height: 35px
+            padding: 0 15px
+            border-radius: 55px
+            background: linear-gradient(to right, -color(background), -color(background-ac), -color(background))
+          span
+            display: inline-block
+            margin: 0 10px
+          .icon svg
+            path
+              stroke: -color(text-ac)
+      .mosaic
+        padding-left: 5%
+        .member
+          @apply flex flex-col
+          height: 85%
+          &:not(:last-child)
+            margin-right: 10px
+          .mosaic
+            position: relative
+            height: 5px
+            margin-bottom: 10px
+            &::before, &::after
+              content: ''
+              position: absolute
+              top: 0
+              left: 0
+              height: 100%
+              transition: .3s
+            &::before
+              width: 72%
+              background: -color(primary)
+            &::after
+              left: auto
+              right: 0
+              width: 25%
+              background: -color(text-ac)
+            &.reversed
+              margin-bottom: 0
+              margin-top: 10px
+              &::before
+                left: auto
+                right: 0
+              &::after
+                left: 0
+                right: auto
+          .image
+            @apply flex-1 w-full
+            position: relative
+            &::before, img
+              position: absolute
+              top: 0
+              left: 0
+              height: 100%
+              width: 100%
+            img
+              object-fit: cover
+            &::before
+              content: ''
+              background: -color(dark, .45)
+              z-index: 1
+              backdrop-filter: blur(3px) saturate(5%)
+              transition: .3s
+          &:hover
+            .mosaic
+              &::before, &::after
+                transition: .3s
+              &::before
+                width: 25%
+              &::after
+                width: 70%
+            .image
+              &::before
+                backdrop-filter: saturate(120%)
+                transition: .3s
+
+      &.team__all
+        .mosaic
+          padding-left: 2%
+          .member
+            position: relative
+            height: 90%
+            width: 33.3%
+            transition: .3s
+            .name
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translateY(0) rotate(-90deg)
+              transform-origin: top left
+              @apply font-semibold
+              color: -color(light)
+              z-index: 10
+              transition: .3s
+              font-size: -var(subtitle-fs)
+              opacity: 0.85
+            .image
+              .info
+                @apply flex flex-col justify-center items-center
+                position: absolute
+                bottom: 10px
+                left: 50%
+                transform: translateX(-50%)
+                opacity: 0
+                background: -color(dark, .15)
+                backdrop-filter: blur(25px)
+                width: 95%
+                padding: 10px
+                color: -color(light)
+                z-index: 10
+                transition: .3s
+                .title
+                  @apply font-semibold
+                  span
+                    display: inline-block
+                    margin: 0 8px
+                    height: 8px
+                    width: 8px
+                    border-radius: 50%
+                    background: -color(primary)
+                .desc
+                  opacity: 0.85
+                  margin: 10px 0
+                  text-align: center
+                .dream
+                  @apply flex items-center
+                  .dr
+                    margin-right: 5px
+                    color: -color(primary)
+                    @apply font-semibold
+              &::before
+                // background: -color(dark, .15)
+                backdrop-filter: blur(5px) saturate(5%)
+            &:hover
+              width: 70%
+              transition: .3s
+              .name
+                opacity: 0
+                transition: .3s
+              .image
+                .info
+                  opacity: 1
+                  transition: .3s
+                &::before
+                  background: -color(dark, .25)
+                  backdrop-filter: blur(0) saturate(100%)
+
+    &#portfolio
+      .project
+        position: relative
+        .title::before, .title::after
+          animation-delay: .5s
+        .desc::before, .desc::after
+          animation-delay: 2s
+        .info
+          width: 65%
+          z-index: 5
+          .title
+            background: linear-gradient(to right, -color(primary, .15), -color(primary, .15))
+            backdrop-filter: blur(20px)
+            padding: 15px
+            margin: 10px 0
+          .desc
+            max-width: 50%
+            margin-bottm: 0
+          button
+            .td-button__content
+              padding: 0 15px
+          .tools
+            margin: 25px 0 50px
+            img
+              height: 24px
+              width: 24px
+              filter: grayscale(0)
+              transition: .5s
+              &:not(:last-child)
+                margin-right: 12px
+              &:hover
+                filter: grayscale(1)
+                transition: .5s
+        .image__
+          position: absolute
+          top: 50%
+          // bottom: 35px
+          right: 5%
+          height: 90%
+          width: 60%
+          background: -color(background-ac)
+          transform: translateY(-50%)
+          overflow: hidden
+          &::before, img
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+          &::before
+            content: ''
+            background: -color(dark, .25)
+            z-index: 2
+            // backdrop-filter: blur(.5px)
+            transition: .3s
+          img
+            object-fit: cover
+            z-index: 1
+        .counter
+          position: absolute
+          bottom: 55px
+          right: -20px
+          line-height: 1
+          // background: -color(background-ac2)
+          padding: 20px 0 0 0 
+          p
+            &.current
+              font-size: 100px
+              color: -color(text-ac)
+              @apply font-extrabold
+        .indicator
+          position: absolute
+          top: 40%
+          right: 0
+          transform: translateY(-40%)
+          button
+            background: -color(primary)
+            .icon
+              svg path
+                stroke: -color(dark)
+                stroke-width: 5px
+            &.prev
+              margin-bottom: 25px
+              .icon
+                transform: rotate(-90deg)
+            &.next
+              margin-top: 25px
+              .icon
+                transform: rotate(90deg)
+          span
+            display: block
+            height: 5px
+            width: 5px
+            background: -color(background-ac)
+            border-radius: 50%
+            transition: .5s
+            &.active
+              border-radius: 50px
+              height: 35px
+              background: -color(text-ac)
+              transition: .5s
+            &:not(:last-child)
+              margin-bottom: 8px
+
+    &#services
+      .thumb
+        .cards
+          position: relative
+          height: 90%
+          width: 85%
+          .text, .switch-button
+            position: absolute
+            bottom: 20px
+            left: 20px
+            z-index: 10
+          .text
+            color: -color(light)
+            font-size: -var(header-fs)
+          .switch-button
+            height: 50px
+            width: 70px
+            left: auto
+            right: -35px
+            backdrop-filter: blur(5px)
+            svg
+              height: 70px
+              width: 35px
+              path
+                stroke: -color(light)
+                stroke-width: 2px
+          .card
+            background: -color(background-ac)
+            &, &::before, img
+              position: absolute
+              top: 0
+              left: 0
+              height: 100%
+              width: 100%
+            &::before
+              content: ''
+              z-index: 2
+              transition: .3s
+            img
+              object-fit: cover
+              z-index: 1
+            &.first
+              z-index: 5
+              border-right: 5px solid -color(primary)
+              &::before
+                background: -color(dark, .35)
+                transition: .3s
+            &.second
+              left: auto
+              right: -5%
+              top: 5%
+              height: 80%
+              &::before
+                background: -color(dark, .85)
+                backdrop-filter: blur(3px) saturate(15%)
+                transition: .3s
+              img
+                filter: grayscale(1)
+      .section_content
+        width: 55%
+        max-width: 55%
+
+    &#blog
+      overflow-y: auto
+      align-items: start
+      padding-top: -var(navbar-height)
+      flex-direction: column
+      .articles-grid
+        display: flex
+        position: relative
+        height: auto !important
+        width: 100% !important
+        // padding: 30px 0
+        margin: 0 -20px
+        .grid-col
+          flex: 1
+        .article
+          // width: 33.3%
+          position: relative
+          padding: 50px 20px
+          &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 20px
+            height: 1px
+            width: 25%
+            background: -color(background-ac)
+          .a-image, .avatar
+            position: relative
+            overflow: hidden
+            img
+              position: absolute
+              top: 0
+              left: 0
+              height: 100%
+              width: 100%
+              object-fit: cover
+          .a-image
+            height: 250px
+            margin-bottom: 15px
+          .a-title
+            font-size: 2.5rem
+            color: -color(text-ac)
+            @apply font-bold
+          .a-infos
+            margin-top: 20px
+            .avatar
+              position: relative
+              height: 40px
+              width: 40px
+              border-radius: 35%
+              margin-right: 8px
+            .sep
+              display: inline-block
+              margin: 0 8px
+              height: 6px
+              width: 6px
+              border-radius: 50%
+              background: -color(primary)
+
+    &#blog_article
+      display: block
+      overflow-y: auto
+      align-items: start
+      padding-top: -var(navbar-height)
+      flex-direction: column
+      header
+        display: block
+        position: relative
+        height: 550px
+        width: 100%
+        margin: 30px 0 175px
+        img, &::before
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 100%
+        &::before
+          content: ''
+          background: -color(dark, .25)
+          z-index: 1
+        img
+          object-fit: cover
+        .header__content
+          position: absolute
+          bottom: -25%
+          left: 30px
+          z-index: 10
+          width: 55%
+          background: -color(background)
+          backdrop-filter: blur(15px)
+          box-shadow: -shadow(primary, $op: .75)
+          padding: 25px 15px
+          h1
+            margin-bottom: 8px
+          .user-infos
+            margin-top: 35px
+            .avatar
+              position: relative
+              height: 40px
+              width: 40px
+              margin-right: 8px
+              &, img
+                border-radius: 35%
+            .sep
+              display: inline-block
+              margin: 0 8px
+              height: 6px
+              width: 6px
+              border-radius: 50%
+              background: -color(primary)
+        .header_actions
+          position: absolute
+          bottom: -25%
+          right: 0
+
+      footer
+        padding-bottom: 80px
+        .h
+          height: 80px
+          border-bottom: 2px dashed -color(text)
+          p
+            color: -color(primary)
+            font-size: -var(subtitle-fs)

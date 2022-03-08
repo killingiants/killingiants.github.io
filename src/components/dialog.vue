@@ -13,6 +13,7 @@
       <div
         :class="[
           'td-dialog',
+          dialogClasses,
           fullScreen && 'td-dialog--fullScreen',
           rebound && 'td-dialog--rebound',
           notPadding && 'td-dialog--notPadding',
@@ -47,7 +48,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { insertBody } from '@/utils/ui';
+import { insertBody } from '/@/utils/ui';
 
 export default defineComponent({
   name: 'TdDialog',
@@ -69,10 +70,11 @@ export default defineComponent({
     width: { default: null, type: String },
     title: { default: '', type: String },
     bodyClasses: { default: '', type: String },
+    dialogClasses: { default: '', type: String },
     routerClose: { default: false, type: Boolean },
   },
 
-  emits:['update:modelValue', 'close'],
+  emits:['update:modelValue', 'close', 'mounted', 'before-unmount'],
 
   data: () => ({
     rebound: false,
@@ -94,7 +96,13 @@ export default defineComponent({
     },
   },
 
+  mounted() {
+    this.$emit('mounted');
+  },
+
   beforeUnmount() {
+    this.$emit('before-unmount');
+
     if (this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el);
     }

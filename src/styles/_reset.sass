@@ -1,14 +1,14 @@
 *::-webkit-scrollbar
-  width: 4px
-  height: 4px
+  width: 5px
+  height: 5px
   display: block
-  background: -color(background)
+  background: transparent
 
 *::-webkit-scrollbar-thumb
-  background: -color(text)
-  border-radius: 0
+  background: -color(text-ac, .85)
+  border-radius: 20px 0 0 20px
   &:hover
-    background: -color(primary)
+    background: -color(primary, .65)
 
 ::selection
   color: -color(light)
@@ -20,8 +20,10 @@ button
   &:focus
     outline: none !important
 
-input
+input, textarea
   outline: none
+  &:focus
+    outline: none !important
 
 input,textarea,button,select,a
   -webkit-tap-highlight-color: rgba(0,0,0,0)
@@ -43,6 +45,13 @@ h3
 a
   &:hover
     color: -color('text-ac')
+
+img
+  -webkit-user-drag: none
+  -khtml-user-drag: none
+  -moz-user-drag: none
+  -o-user-drag: none
+  user-drag: none
 
 [disabled]
   opacity: .6

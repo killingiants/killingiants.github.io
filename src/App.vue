@@ -1,63 +1,105 @@
 <template>
-  <div class="bg">
-    <img src="/vectors/bg_strip.svg" alt="">
+  <div id="bg">
+    <img src="./assets/vectors/bg.svg" alt="">
   </div>
-  <div id="navbar" class="flex items-center justify-between">
-    <div class="brand flex items-center cursor-pointer" @click="toHome">
+  <div id="AppNavbar">
+    <router-link :to="{name: 'hero'}" class="brand flex items-center">
       <div class="logo"></div>
-      <p class="text">Killing giants</p>
+      <p class="text capitalize">.Killing giants</p>
+    </router-link>
+    <navbar :links="pages" indicator-position="top"></navbar>
+    <div class="flex items-center">
+      <td-button class="theme" @click="toggleDark">
+        <MoonIcon v-if="!isDark" />
+        <SunIcon v-else />
+      </td-button>
+      <div class="translate flex items-center">
+        <!-- <TranslateIcon></TranslateIcon> -->
+        <span>{{ t('langs.english') }}</span>
+        <country-flag country='gb' size='normal' class="!m-0"/>
+      </div>
     </div>
-    <navbar v-model="pageIndex" :links="links" indicator-position="top"/>
-    <td-button class="quote">Get a quote</td-button>
   </div>
-  <div class="app-content flex-1">
-    <router-view />
+  <div class="app_content">
+    <router-view v-slot="{ Component }">
+      <transition v-on:enter="enter"  v-on:leave="leave" v-bind:css="false" appear>
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
-<script lang="ts" setup>
-  import { ref, watch } from 'vue';
-  import { useRouter } from 'vue-router';
+<script lang="ts">
+  import { defineComponent, ref } from 'vue'
+  import gsap from 'gsap'
+  import { useDark, useToggle } from '@vueuse/core'
+  import { useI18n } from 'vue-i18n'
+  import CountryFlag from 'vue-country-flag-next'
 
-  const router = useRouter();
 
-  const links: Array<String> = [
-    'About',
-    'services',
-    'portfolio',
-    'Actuality',
-    'Our team',
-    'Contact',
-  ];
+  export default defineComponent({
+    components: {
+      CountryFlag
+    },
 
-  const pageIndex = ref<Number>(-1);
+    setup() {
+      const { t } = useI18n()
+      const isDark = useDark();
+      const toggleDark = useToggle(isDark);
 
-  const toHome = () => {
-    pageIndex.value = -1;
-  }
+      const pages = ref([
+        {text: t('nav_links.about'), name: 'about'},
+        {text: t('nav_links.services'), name: 'services'},
+        {text: t('nav_links.portfolio'), name: 'portfolio'},
+        // {text: t('nav_links.actuality'), name: 'blog'},
+        {text: t('nav_links.team'), name: 'team'},
+        {text: t('nav_links.contact'), name: 'contact'},
+      ]);
 
-  watch(pageIndex, (page) => {
-    let pageName = '';
 
-    switch (page) {
-      case 0:
-        pageName = 'about';
-        break;
-      case 1:
-        pageName = 'services';
-        break;
-      case 2:
-        pageName = 'portfolio';
-        break;
-      case links.length - 1:
-        pageName = 'contact';
-        break;
-      default:
-        pageName = 'home';
-        pageIndex.value = -1;
-        break;
-    }
+      const enter = (el: any, done: any) => {
+        const tl = gsap.timeline({
+          onComplete: done
+        })
+        
+        tl.set(el, {
+          x: window.innerWidth * 1.5,
+          scale: 0.8,
+          transformOrigin: '50% 50%'
+        })
 
-    router.push({name: pageName})
+        tl.from(el, {
+          duration: 0.5,
+          x: 0,
+          ease: 'Power4.easeOut'
+        });
+        tl.to(el, {
+          duration: 1,
+          scale: 1,
+          ease: 'Power4.easeOut'
+        });
+      }
+
+      const leave = (el: any, done: any) => {
+        // done()
+        gsap.to(el, {
+          duration: .5,
+          x: window.innerHeight * -1.5,
+          opacity: 0,
+          ease: 'Power4.easeOut',
+          onComplete: done
+        });
+      }
+
+      return {
+        isDark,
+        pages,
+
+        t,
+        toggleDark,
+        enter,
+        leave,
+      }
+    },
   })
 </script>

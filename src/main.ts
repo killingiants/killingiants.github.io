@@ -1,17 +1,20 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia';
+import { createApp } from 'vue';
+import { createI18n } from 'vue-i18n';
 
-import router from '@/router';
-import registerComponents from '@/components';
-import App from './App.vue'
+import App from './App.vue';
+import router from '/@/routes';
+import registerComponents from '/@/components';
+import messages from '/@/i18n';
 
-import '@/styles';
+import '/@/styles';
 
 const app = createApp(App);
-const pinia = createPinia();
+const i18n = createI18n({
+  locale: 'en', // set locale
+  fallbackLocale: 'en', // set fallback locale
+  messages,
+});
 
 registerComponents(app);
 
-app.use(pinia);
-app.use(router);
-app.mount('#app');
+app.use(router).use(i18n).mount('#app');

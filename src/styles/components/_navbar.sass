@@ -1,25 +1,27 @@
 .navbar__
   position: relative
-  height: 100%
+  &, .nav-item
+    height: 100%
   .nav-item
+    display: flex
+    align-items: center
     font-size: -var('body_fs')
+    cursor: pointer
     &:not(:last-child)
-      margin-right: -var('navbar-nav-item-mr')
-    &.active
+      margin-right: -var('navbar-mr')
+    &.router-link-exact-active
       color: -color('primary')
-      @apply font-bold
+      @apply font-semibold
       & ~ .nav-indicator
         opacity: 1
-    //   height: 0
-    //   transition: all -var('navbar-animation-duration') ease-in-out
   .nav-indicator
     position: absolute
     top: 0
     left: 0
     height: -var('navbar-nav-indicator-height')
     min-width: 40px
+    transition: left -var('navbar-animation-duration') ease-in-out
     opacity: 0
-    transition: all -var('navbar-animation-duration') ease-in-out
     &::before
       content: ''
       position: absolute
@@ -27,8 +29,9 @@
       bottom: 0
       left: 50%
       width: -var('navbar-nav-indicator-width')
+      max-width: 80px
       background-color: -color('primary')
-      border-radius: -var('navbar-nav-indicator-radius')
+      border-radius: 0 0 50px 50px
       transform: translateX(-50%)
   &.indicator-at-bottom
     .nav-indicator

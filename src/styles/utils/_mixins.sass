@@ -27,3 +27,39 @@
     &.s-full
       @apply h-full w-full flex items-center justify-center
     @content
+
+@mixin state($color)
+  .vs-select__input
+    // border: 2px solid -color($color,.5)
+    background: -color($color,.05)
+    color: -color($color,1)
+    &:hover
+      // border: 2px solid -color($color, 0)
+      color: -color('text',1)
+  .vs-select__chips
+    background: -color($color,.05)
+    color: -color($color,1)
+    &:hover
+      &:after
+          opacity: 0
+    &:after
+      width: calc(100% - 4px)
+      height: calc(100% - 4px)
+      content: ''
+      position: absolute
+      top: 0px
+      left: 0px
+      border: 2px solid -color($color,.5)
+      border-radius: inherit
+      transition: all .25s ease
+  .vs-select__label
+    color: -color($color,1)
+  .vs-select__icon
+    color: -color($color,1)
+    background: -color($color,.1)
+    box-shadow: -15px 10px 10px -10px -color($color,.1)
+  .vs-icon-arrow
+    &:after
+      background: -color($color,1)
+    &:before
+      background: -color($color,1)
