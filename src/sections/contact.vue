@@ -3,7 +3,7 @@
     <div class="flex flex-col h-full section_content">
       <div class="texts my-auto">
         <div class="sm">
-          <p>Get in touch with</p>
+          <p>{{t('sections.contact.sm')}}</p>
         </div>
         <h1 class="title">{{t('sections.contact.title')}}</h1> 
         <p class="desc big">{{t('sections.contact.desc')}}</p>

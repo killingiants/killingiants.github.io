@@ -10,8 +10,8 @@ import '/@/styles';
 
 const app = createApp(App);
 const i18n = createI18n({
-  locale: 'en', // set locale
-  fallbackLocale: 'en', // set fallback locale
+  locale: localStorage.getItem('locale') ?? 'en', // set locale
+  fallbackLocale: 'fr', // set fallback locale
   messages,
 });
 

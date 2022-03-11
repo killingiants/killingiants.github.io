@@ -12,19 +12,19 @@
         <td-button class="switch-button" :disabled="!canSlide" @click="next"><ArrowRight2Icon></ArrowRight2Icon></td-button>
       </div>
     </div>
-    <div class="section_content texts text-right flex flex-col items-end ml-auto">
+    <div class="section_content texts text-left flex flex-col items-end ml-auto">
       <div class="sm reversed">
-        <p>{{t('sections.services.sm')}}</p>
+        <p>{{currentSlide.name}}</p>
       </div>
       <component :is="'h1'" :key="currentSlideIndex">
         <h1 class="title">{{ currentSlide.title }}</h1> 
       </component>
       <component :is="'p'" :key="currentSlideIndex">
-        <p class="desc">{{ currentSlide.desc }}</p>
+        <p class="desc big max-w-[85%]">{{ currentSlide.desc }}</p>
       </component>
-      <div class="flex justify-end">
+      <!-- <div class="flex justify-start">
         <td-button class="main-button not-special black" :to="{name: 'contact'}">{{t('sections.services.main_button')}}</td-button>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -47,7 +47,7 @@
       const canSlide = ref(false)
       const slides = ref<Array<SlideModel>>([
         {
-          img: '/images/ux.jpg',
+          img: '/images/UX.jpg',
           name: t('sections.services.services.1.name'),
           title: t('sections.services.services.1.title'),
           desc: t('sections.services.services.1.desc')

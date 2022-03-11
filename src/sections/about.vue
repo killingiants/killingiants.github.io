@@ -9,10 +9,11 @@
 			</div> -->
       <div class="sm">
         <p>
-          {{t('sections.hero.presentation_texts.prefix')}} {{typingOptions.typeValue.length == 0 ? 'an' : 'a'}}
+          {{t('sections.hero.presentation_texts.prefix')}} {{typingOptions.typeValue.length == 0 ? t('sections.hero.presentation_texts.det1') : t('sections.hero.presentation_texts.det2')}}
+          {{  locale == 'fr' ? t('sections.hero.presentation_texts.suffix') : ''}}
           <span class="typed-text">{{ typingOptions.typeValue }}</span>
           <span class="cursor" :class="{'typing': typingOptions.typeStatus}">&nbsp;</span>
-          {{t('sections.hero.presentation_texts.suffix')}}
+          {{  locale == 'en' ? t('sections.hero.presentation_texts.suffix') : ''}}
         </p>
       </div>
 			<h1 class="title">{{t('sections.about.title')}}</h1> 
@@ -32,7 +33,7 @@
 
   export default defineComponent({
     setup() {
-      const { t } = useI18n()
+      const { t, locale } = useI18n()
       const herotexts = [t('sections.hero.presentation_texts.1'), t('sections.hero.presentation_texts.2'), t('sections.hero.presentation_texts.3'),]
       const typingOptions = ref({
         typeValue: '',
@@ -124,7 +125,7 @@
         startEnterAnimation()
       });
 
-      return { t, typingOptions }
+      return { t, locale, typingOptions }
     },
   })
 </script>

@@ -4,7 +4,7 @@
       exact
       v-for="(link, index) in links"
       :key="index"
-      class="nav-item capitalize"
+      class="nav-item"
       :to="{name: link.name}"
       @click="update($event, index)"
     >{{ link.text }}</router-link>

@@ -17,11 +17,6 @@ export default defineConfig({
     vue(),
     WindiCSS(),
     vueI18n({
-      // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
-      // compositionOnly: false,
-
-      // you need to set i18n resource including paths !
-      // include: path.resolve(__dirname, './path/to/src/locales/**')
       include: join(PACKAGE_ROOT, 'src') + '/i18n/locales/**',
     })
   ]

@@ -31,7 +31,7 @@
       </div> -->
     </div>
     <div class="thumb flex-1 relative h-full">
-      <img src="/images/hero2.png">
+      <img src="/images/hero.png">
     </div>
   </section>
 </template>
@@ -43,7 +43,7 @@
 
   export default defineComponent({
     setup() {
-      const { t } = useI18n()
+      const { t, locale } = useI18n()
       /* const herotexts = [t('sections.hero.presentation_texts.1'), t('sections.hero.presentation_texts.2'), t('sections.hero.presentation_texts.3'),]
       const typingOptions = ref({
         typeValue: '',
@@ -145,6 +145,7 @@
 
       return {
         t,
+        locale,
         // typingOptions
       }
     },

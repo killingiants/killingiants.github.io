@@ -12,12 +12,12 @@
           <p class="desc">{{ currentProject.desc }}</p>
         </component>
 				<div class="tools flex items-center overflow-hidden">
-					<img src="../assets/vectors/figma.svg" alt="">
-					<img src="../assets/vectors/vs_code.svg" alt="">
-					<img src="../assets/vectors/js.svg" alt="">
-					<img src="../assets/vectors/vue.svg" alt="">
-					<img src="../assets/vectors/html_5.svg" alt="">
-					<img src="../assets/vectors/css_3.svg" alt="">
+          <img src="../assets/vectors/figma.svg" alt="" v-show="exist(currentProject.tools, 0)">
+          <img src="../assets/vectors/vs_code.svg" alt="" v-show="exist(currentProject.tools, 1)">
+          <img src="../assets/vectors/js.svg" alt="" v-show="exist(currentProject.tools, 2)">
+          <img src="../assets/vectors/vue.svg" alt="" v-show="exist(currentProject.tools, 3)">
+          <img src="../assets/vectors/html_5.svg" alt="" v-show="exist(currentProject.tools, 4)">
+          <img src="../assets/vectors/css_3.svg" alt="" v-show="exist(currentProject.tools, 5)">
 				</div>
 				<td-button class="main-button not-special black" :to="{name: 'project'}">Read more.</td-button>
 			</div>
@@ -38,36 +38,49 @@
 <script lang="ts">
   import { computed, defineComponent, onMounted, ref, watch } from 'vue'
   import gsap from 'gsap'
+  import { useI18n } from 'vue-i18n'
 
   interface ProjectModel {
     img: string
     type: string,
     title: string,
     desc: string,
+    tools: Array<Number>
   }
 
   export default defineComponent({
     setup() {
+      const { t } = useI18n()
       const canSlide = ref(false)
       const projects = ref<Array<ProjectModel>>([
         {
-          img: '/images/p1.png',
-          type: 'UI/UX Design',
-          title: 'We gave kaba a new face.',
-          desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit omnis sapiente accusantium eaque minima commodi voluptates, numquam in, cumque quia obcaecati doloremque ab itaque dolor explicabo facere atque. Quisquam, ratione? Sapiente illum distinctio, maxime amet officia ut in, sit autem veniam doloribus atque nihil natus ea.'
+          img: '/images/kg.png',
+          type: 'UI/UX Design, Coding.',
+          title: t('sections.portfolio.p1.title'),
+          desc: t('sections.portfolio.p1.desc'),
+          tools: [0, 1, 2 ,3 ,4 , 5]
         },
         {
           img: '/images/p2.png',
           type: 'UI/UX Design',
-          title: 'Winner of brydg no-code hackathon 2021.',
-          desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit omnis sapiente accusantium eaque minima commodi voluptates, numquam in, cumque quia obcaecati doloremque ab itaque dolor explicabo facere atque. Quisquam, ratione? Sapiente illum distinctio, maxime amet officia ut in, sit autem veniam doloribus atque nihil natus ea.'
+          title: t('sections.portfolio.p2.title'),
+          desc: t('sections.portfolio.p2.desc'),
+          tools: [0]
         },
         {
-          img: '/images/p3.png',
-          type: 'UI/UX Design',
-          title: 'We built amazon clone.',
-          desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit omnis sapiente accusantium eaque minima commodi voluptates, numquam in, cumque quia obcaecati doloremque ab itaque dolor explicabo facere atque. Quisquam, ratione? Sapiente illum distinctio, maxime amet officia ut in, sit autem veniam doloribus atque nihil natus ea.'
-        }
+          img: '/images/p1.png',
+          type: 'UI/UX Design, Coding.',
+          title: t('sections.portfolio.p3.title'),
+          desc: t('sections.portfolio.p3.desc'),
+          tools: [0, 1, 2 ,3 ,4 , 5]
+        },
+        {
+          img: '/images/p4.png',
+          type: 'UI/UX Design, Coding.',
+          title: t('sections.portfolio.p4.title'),
+          desc: t('sections.portfolio.p4.desc'),
+          tools: [0, 1, 2 ,3 ,4 , 5]
+        },
       ])
       const currentProjectIndex = ref<number>(0)
 
@@ -153,6 +166,10 @@
         })
       }
 
+      function exist(arr: Array<Number>, i:Number) {
+        return arr.indexOf(i) >= 0;
+      }
+
       onMounted(() => {
         startEnterAnimation()
       });
@@ -170,6 +187,7 @@
         prev,
         next,
         setActive,
+        exist
       }
     },
   })
