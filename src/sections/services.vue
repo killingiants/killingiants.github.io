@@ -3,24 +3,23 @@
     <div class="thumb flex-1 flex items-center h-full">
       <div class="cards">
         <div class="first card">
-          <img :src="currentSlide.img" :alt="currentSlide.name">
+          <img :src="currentSlide">
         </div>
         <div class="second card">
-          <img :src="nextSlide.img" alt="">
+          <img :src="nextSlide" alt="">
         </div>
-        <h1 class="text">{{ currentSlide.name }}</h1>
+        <h1 class="text">{{ t('sections.services.services.'+ (currentSlideIndex + 1) +'.name') }}</h1>
         <td-button class="switch-button" :disabled="!canSlide" @click="next"><ArrowRight2Icon></ArrowRight2Icon></td-button>
       </div>
     </div>
-    <div class="section_content texts text-left flex flex-col items-end ml-auto">
+    <div class="section_content texts text-left flex flex-col items-start ml-auto">
       <div class="sm reversed">
-        <p>{{currentSlide.name}}</p>
+        <p>{{ t('sections.services.services.'+ (currentSlideIndex + 1) +'.name') }}</p>
       </div>
-      <component :is="'h1'" :key="currentSlideIndex">
-        <h1 class="title">{{ currentSlide.title }}</h1> 
-      </component>
-      <component :is="'p'" :key="currentSlideIndex">
-        <p class="desc big max-w-[85%]">{{ currentSlide.desc }}</p>
+      <component :is="'div'" :key="currentSlideIndex">
+        <h1 class="title">{{ t('sections.services.services.'+ (currentSlideIndex + 1) +'.title') }}</h1> 
+        <p class="desc big max-w-[85%]">{{ t('sections.services.services.'+ (currentSlideIndex + 1) +'.desc') }}</p>
+        <p class="desc desc2 big max-w-[85%]">{{ t('sections.services.services.'+ (currentSlideIndex + 1) +'.desc2') }}</p>
       </component>
       <!-- <div class="flex justify-start">
         <td-button class="main-button not-special black" :to="{name: 'contact'}">{{t('sections.services.main_button')}}</td-button>
@@ -34,36 +33,14 @@
   import gsap from 'gsap'
   import { useI18n } from 'vue-i18n'
 
-  interface SlideModel {
-    img: string
-    name: string,
-    title: string,
-    desc: string
-  }
-
   export default defineComponent({
     setup() {
       const { t } = useI18n()
       const canSlide = ref(false)
-      const slides = ref<Array<SlideModel>>([
-        {
-          img: '/images/UX.jpg',
-          name: t('sections.services.services.1.name'),
-          title: t('sections.services.services.1.title'),
-          desc: t('sections.services.services.1.desc')
-        },
-        {
-          img: '/images/ui.jpg',
-          name: t('sections.services.services.2.name'),
-          title: t('sections.services.services.2.title'),
-          desc: t('sections.services.services.2.desc')
-        },
-        {
-          img: '/images/code.jpg',
-          name: t('sections.services.services.3.name'),
-          title: t('sections.services.services.3.title'),
-          desc: t('sections.services.services.3.desc')
-        }
+      const slides = ref<Array<string>>([
+        '/images/UX.jpg',
+        '/images/ui.jpg',
+        '/images/code.jpg'
       ])
       const currentSlideIndex = ref<number>(0)
 

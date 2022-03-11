@@ -36,17 +36,20 @@
 				"1": {
 					"title": "Before action, reflection.",
 					"name": "UX Design.",
-					"desc": "In order to meet the needs of your users, our team of designers, thanks to a methodology based on co-design, develops for you a strategy based on design thinking. This methodology allows us to define the problem, to make brainstorming sessions to answer it, then once the solution is found, to create a prototype of the envisaged solution to visualize it in order to test it."
+					"desc": "In order to meet the needs of your users, our team of designers, through a methodology based on co-design, develops for you a strategy based on design thinking",
+					"desc2": "This methodology allows us to define the problem, to make brainstorming sessions to answer it, then once the solution is found, to create a prototype of the envisaged solution to visualize it in order to test it."
 				},
 				"2": {
 					"title": "Beautiful interfaces.",
 					"name": "UI Design.",
-					"desc": "Once the wireframes have been laid out and validated, our interface designers come into play to give the application or software its final appearance.They must then design and/or use the appropriate icons and the right colors so that the whole is not only harmonious but also triggers in the end user a pleasure related to the use of the digital product."
+					"desc": "Once the wireframes have been laid out and validated, our interface designers come in to give the application or software its final look.",
+					"desc2": "They then have to design and/or use the appropriate icons and the right colors so that the whole thing is not only harmonious but also triggers in the end user a pleasure related to the use of the digital product."
 				},
 				"3": {
-					"title": "The truth is elsewhere.",
+					"title": "The truth is out there.",
 					"name": "Coding.",
-					"desc": "An interface can be pretty and intuitive but if there are no codes behind it, it is useless. This is where the artists of our agency come in. Through beautifully written code, they make the application or software work. Using the design of the interface designers, they put in place the necessary magic so that the application not only works but also has no bugs whatever the display."
+					"desc": "An interface can be pretty and intuitive but if there is no code behind it, it is useless.",
+					"desc2": "So this is where our agency's artists come in. Through beautifully written code, they make the application or software work. Using the design of interface designers, they work the magic so that the application not only works, but also has no bugs, no matter what the display."
 				}
 			}
 		},
@@ -65,19 +68,23 @@
 		"portfolio": {
 			"p1": {
 				"title": "You are never better served than by yourself.",
-				"desc": "Because why not we chose to put our website in our portfolio. After all, it is the showcase of our design and code know-how. We wanted something simple, elegant, fast and pleasant to browse. We had in mind during the development a minimalist website that would deliver just the information the client needs to judge if they should work with us or not."
+				"desc": "Because why not we chose to put our website in our portfolio. After all, it is the showcase of our design and code know-how.",
+				"desc2": "For our website we wanted something simple, elegant, fast and pleasant to browse. We had in mind during the development a minimalist site that would deliver just the information the client needs to judge whether to work with us or not."
 			},
 			"p2": {
-				"title": "Winner of the no-code hackathon 2021 of Brydg.",
-				"desc": "Last November, for a week, we participated in a no code hackathon organized by the association Brydge from which we came out as winners. The objective was to make the UX and UI of a fair tourism application. Our application made it possible to discover the Bassar country and its activities by using many tools such as the Tourpedia (a kind of wikipedia in Siri mode) as well as the augmented reality to know the history of the region and the whole while allowing the region to receive a share on each tourist. The challenge is to make the application intuitive and easy to use Translated with www.DeepL.com/Translator (free version)."
+				"title": "Winner of Brydg's 2021 no-code hackathon.",
+				"desc": "Last November, for a week, we participated in a no-code hackathon organized by the Brydge association from which we came out as winners. The objective was to make the UX and UI of a fair tourism application.",
+				"desc2": "Our application made it possible to discover the Bassar country and its activities by using many tools such as the Tourpedia (a kind of wikipedia in Siri mode) as well as the augmented reality to know the history of the region and the whole while allowing the region to receive a share on each tourist. The challenge being to make the app intuitive and easy to pick up."
 			},
 			"p3": {
 				"title": "kaba delivery redesign.",
-				"desc": "Kaba Delivery is a ready-to-eat delivery service launched by Kaba and based in Lomé, Togo. Orders are taken via the mobile application from partner restaurants and are delivered by independent motorcycle couriers. We have here a proposal of what could be their site to be even more professional and in the air of time."
+				"desc": "Kaba Delivery is a ready-to-eat delivery service launched by Kaba and based in Lomé, Togo. Orders are taken via the mobile app from partner restaurants and delivered by independent motorcycle couriers.",
+				"desc2": "So here we have a proposal of what their site could be to be even more professional and up to date."
 			},
 			"p4": {
-				"title": "Projet Mihawk: Gestion d'etablissement.",
-				"desc": "The Mihawk project was commissioned by a private school in Gabon. It is a report card management software that allows any owner of this software to generate the report cards of his entire school. It is configured with several basic modules: registration, management of classes and subjects and recording of grades. Developed in Python, this software is simple and easy to use thanks to an interface studied to be both simple and user-friendly thanks to our ux and ui designers Translated with www.DeepL.com/Translator (free version)."
+				"title": "Mihawk Project: School Management.",
+				"desc": "The Mihawk project is a commission from a private school in Gabon. It is a school report management software that allows any owner of this software to generate the report cards of his whole school. It is configured with several basic modules: registration, management of classes and subjects and recording of grades",
+				"desc2": "Developed in Python, this software is simple and easy to use thanks to an interface studied to be both simple and user-friendly thanks to our UX and UI designers."
 			}
 		}
 	}

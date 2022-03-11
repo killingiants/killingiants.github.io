@@ -6,7 +6,7 @@
   <div id="Mobile" class="lg:hidden flex flex-col items-center justify-center text-center">
     <img src="/images/error.png" width="250" alt="Error img">
     <h1>Oups !</h1>
-    <p class="max-w-[50%] mt-[5px]" >This section of the site is not available because it is under maintenance. Feel free to check it on the desktop. Thank you and sorry for this inconvenience.</p>
+    <p class="max-w-[85%] mt-[5px]" >This section of the site is not available because it is under maintenance. Feel free to check it on the desktop. Thank you and sorry for this inconvenience.</p>
   </div>
 
 

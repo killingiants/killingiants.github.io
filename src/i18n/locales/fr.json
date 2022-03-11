@@ -36,17 +36,20 @@
 				"1": {
 					"title": "Avant l’action, la réflexion.",
 					"name": "UX Design.",
-					"desc": "Dans le but de répondre aux besoins de vos utilisateurs, notre équipe de designers , grâce à une méthodologie basée sur la co-conception, élabore pour vous une stratégie basée sur le design thinking.Cette méthodologie nous permet de définir la problématique, de faire des séances de brainstorming pour y répondre, puis une fois la solution trouvée ,de créer un prototype de la solution envisagée pour la visualiser afin de pouvoir la tester."
+					"desc": "Dans le but de répondre aux besoins de vos utilisateurs, notre équipe de designers , grâce à une méthodologie basée sur la co-conception, élabore pour vous une stratégie basée sur le design thinking.",
+					"desc2": "Cette méthodologie nous permet de définir la problématique, de faire des séances de brainstorming pour y répondre, puis une fois la solution trouvée ,de créer un prototype de la solution envisagée pour la visualiser afin de pouvoir la tester."
 				},
 				"2": {
 					"title": "Des interfaces de toutes beauté.",
 					"name": "UI Design.",
-					"desc": "Une fois que les wireframes ont été posés et validés, nos designers d’interfaces entrent en jeu pour donner à l’application ou au logiciel son apparence définitive. Ils doivent alors concevoir et/ou utiliser les icônes appropriées ainsi que les bonnes couleurs pour que le tout soit non seulement harmonieux mais déclenche également chez l’utilisateur final un plaisir lié à l’utilisation du produit digital."
+					"desc": "Une fois que les wireframes ont été posés et validés, nos designers d’interfaces entrent en jeu pour donner à l’application ou au logiciel son apparence définitive.",
+					"desc2": "Ils doivent alors concevoir et/ou utiliser les icônes appropriées ainsi que les bonnes couleurs pour que le tout soit non seulement harmonieux mais déclenche également chez l’utilisateur final un plaisir lié à l’utilisation du produit digital."
 				},
 				"3": {
 					"title": "La vérité est ailleurs.",
 					"name": "Coding.",
-					"desc": "Une interface peut être jolie et intuitive mais s’il n’y a pas de codes derrière, elle ne sert à rien. C’est ici donc qu’interviennent les artistes de notre agence. Grâce  à un code magnifiquement écrit, ils rendent  l’application ou le logiciel fonctionnel. En utilisant le design des designers d’interface, ils mettent en place la magie nécessaire pour que non seulement l’application fonctionne mais qu’en plus, elle n’aie aucun bug et ce quelque soit l’affichage."
+					"desc": "Une interface peut être jolie et intuitive mais s’il n’y a pas de codes derrière, elle ne sert à rien.",
+					"desc2": "C’est ici donc qu’interviennent les artistes de notre agence. Grâce  à un code magnifiquement écrit, ils rendent  l’application ou le logiciel fonctionnel. En utilisant le design des designers d’interface, ils mettent en place la magie nécessaire pour que non seulement l’application fonctionne mais qu’en plus, elle n’aie aucun bug et ce quelque soit l’affichage."
 				}
 			}
 		},
@@ -65,19 +68,23 @@
 		"portfolio": {
 			"p1": {
 				"title": "On est jamais mieux servi que par soi même.",
-				"desc": "Parce que pourquoi pas nous avons choisis de mettre notre site web dans notre portfolio. Après tout, il est la vitrine de notre savoir-faire en matière de design et de code. Nous voulions quelque chose de simple, d'élégant , de rapide et  agréable à parcourir. Nous avions en tete lors du développement un site minimaliste qui délivrerait juste l’information dont à besoin le client pour juger s’il doit travailler avec nous ou pas."
+				"desc": "Parce que pourquoi pas nous avons choisis de mettre notre site web dans notre portfolio. Après tout, il est la vitrine de notre savoir-faire en matière de design et de code.",
+				"desc2": "Pour notre site nous voulions quelque chose de simple, d'élégant , de rapide et  agréable à parcourir. Nous avions en tête lors du développement un site minimaliste qui délivrerait juste l’information dont à besoin le client pour juger s’il doit travailler avec nous ou pas."
 			},
 			"p2": {
 				"title": "Gagnant du no-code hackathon 2021 de Brydg.",
-				"desc": "En novembre dernier, pendant une semaine, nous avons participé à un hackathon no code organisé par l’association Brydge duquel nous sommes sortis vainqueurs. L’objectif était de  faire l’UX et l’UI d’une application de tourisme-équitable. Notre application permettait de découvrir le pays Bassar ainsi que ses activités en utilisant de nombreux outils tel que le Tourpedia (une sorte de wikipédia en mode Siri) ainsi que la réalité augmentée pour connaître l’histoire de la région et le tout en permettant à la région de recevoir une part sur chaque touriste. Le dfi etant de rendre l’application intuitive et facile à prendre en main."
+				"desc": "En novembre dernier, pendant une semaine, nous avons participé à un hackathon no code organisé par l’association Brydge duquel nous sommes sortis vainqueurs. L’objectif était de  faire l’UX et l’UI d’une application de tourisme-équitable.",
+				"desc2": "Notre application permettait de découvrir le pays Bassar ainsi que ses activités en utilisant de nombreux outils tel que le Tourpedia (une sorte de wikipédia en mode Siri) ainsi que la réalité augmentée pour connaître l’histoire de la région et le tout en permettant à la région de recevoir une part sur chaque touriste. Le défi étant de rendre l’application intuitive et facile à prendre en main."
 			},
 			"p3": {
 				"title": "kaba delivery redesign.",
-				"desc": "Kaba Delivery est un service de livraison de plats cuisinés lancé par Kaba et basé à Lomé, au Togo. Les commandes sont prises via l'application mobile auprès des restaurants partenaires et sont livrées par des coursiers indépendants à moto. Nous avons ici donc une proposition de ce que pourrait être leur site pour être encore plus professionnel et dans l'air du temps."
+				"desc": "Kaba Delivery est un service de livraison de plats cuisinés lancé par Kaba et basé à Lomé, au Togo. Les commandes sont prises via l'application mobile auprès des restaurants partenaires et sont livrées par des coursiers indépendants à moto.",
+				"desc2": "Nous avons ici donc une proposition de ce que pourrait être leur site pour être encore plus professionnel et dans l'air du temps."
 			},
 			"p4": {
 				"title": "Projet Mihawk: Gestion d'etablissement.",
-				"desc": "Le projet Mihawk est une commande d’un établissement scolaire  privé gabonais. Il s'agit d’un logiciel de gestion de bulletins scolaires qui permet à tout détenteur de ce logiciel de générer les bulletins de tout son établissement. Il est paramétré de bases avec plusieurs modules: inscription, gestion des classes et des matières et enregistrement des notes. Développé en Python, ce logiciel est simple et facile à prendre en main grâce à une interface étudiée pour être à la fois simple et conviviale grâce à nos ux et ui designers."
+				"desc": "Le projet Mihawk est une commande d’un établissement scolaire  privé gabonais. Il s'agit d’un logiciel de gestion de bulletins scolaires qui permet à tout détenteur de ce logiciel de générer les bulletins de tout son établissement. Il est paramétré de bases avec plusieurs modules: inscription, gestion des classes et des matières et enregistrement des notes.",
+				"desc2": "Développé en Python, ce logiciel est simple et facile à prendre en main grâce à une interface étudiée pour être à la fois simple et conviviale grâce à nos UX et UI designers."
 			}
 		}
 	}

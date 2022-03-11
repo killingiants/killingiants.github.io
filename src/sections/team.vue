@@ -5,8 +5,8 @@
 				<p>{{t('sections.team.sm')}}</p>
 			</div>
 			<h1 class="title">{{t('sections.team.title')}}</h1>
-			<p class="desc">{{t('sections.team.desc1')}}</p>
-			<p class="desc">{{t('sections.team.desc2')}}</p>
+			<p class="desc big">{{t('sections.team.desc1')}}</p>
+			<p class="desc big">{{t('sections.team.desc2')}}</p>
 			<td-button class="main-button" :to="{name: 'team_all'}">
 				<div class="circle__">
 					<ArrowRight2Icon></ArrowRight2Icon>

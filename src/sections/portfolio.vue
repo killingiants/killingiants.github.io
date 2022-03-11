@@ -6,10 +6,11 @@
           <p>{{ currentProject.type }}</p>
         </div>
         <component :is="'h1'" :key="currentProjectIndex">
-          <h1 class="title">{{ currentProject.title }}</h1> 
+          <h1 class="title">{{ t('sections.portfolio.p' + (currentProjectIndex + 1) + '.title') }}</h1> 
         </component>
-        <component :is="'p'" :key="currentProjectIndex">
-          <p class="desc">{{ currentProject.desc }}</p>
+        <component :is="'div'" :key="currentProjectIndex" class="flex flex-col">
+          <p class="desc med">{{ t('sections.portfolio.p' + (currentProjectIndex + 1) + '.desc') }}</p>
+          <p class="desc desc2 med">{{ t('sections.portfolio.p' + (currentProjectIndex + 1) + '.desc2') }}</p>
         </component>
 				<div class="tools flex items-center overflow-hidden">
           <img src="../assets/vectors/figma.svg" alt="" v-show="exist(currentProject.tools, 0)">
@@ -19,7 +20,7 @@
           <img src="../assets/vectors/html_5.svg" alt="" v-show="exist(currentProject.tools, 4)">
           <img src="../assets/vectors/css_3.svg" alt="" v-show="exist(currentProject.tools, 5)">
 				</div>
-				<td-button class="main-button not-special black" :to="{name: 'project'}">Read more.</td-button>
+				<!-- <td-button class="main-button not-special black" :to="{name: 'project'}">Read more.</td-button> -->
 			</div>
 			<div class="indicator flex flex-col items-center">
         <td-button class="prev" @click="prev" :disabled="!canSlide"><ArrowRight2Icon></ArrowRight2Icon></td-button>
@@ -41,10 +42,8 @@
   import { useI18n } from 'vue-i18n'
 
   interface ProjectModel {
-    img: string
+    img: string,
     type: string,
-    title: string,
-    desc: string,
     tools: Array<Number>
   }
 
@@ -56,29 +55,21 @@
         {
           img: '/images/kg.png',
           type: 'UI/UX Design, Coding.',
-          title: t('sections.portfolio.p1.title'),
-          desc: t('sections.portfolio.p1.desc'),
           tools: [0, 1, 2 ,3 ,4 , 5]
         },
         {
           img: '/images/p2.png',
           type: 'UI/UX Design',
-          title: t('sections.portfolio.p2.title'),
-          desc: t('sections.portfolio.p2.desc'),
           tools: [0]
         },
         {
           img: '/images/p1.png',
           type: 'UI/UX Design, Coding.',
-          title: t('sections.portfolio.p3.title'),
-          desc: t('sections.portfolio.p3.desc'),
           tools: [0, 1, 2 ,3 ,4 , 5]
         },
         {
           img: '/images/p4.png',
           type: 'UI/UX Design, Coding.',
-          title: t('sections.portfolio.p4.title'),
-          desc: t('sections.portfolio.p4.desc'),
           tools: [0, 1, 2 ,3 ,4 , 5]
         },
       ])
@@ -183,6 +174,8 @@
         currentProjectIndex,
         projects,
         currentProject,
+
+        t,
 
         prev,
         next,

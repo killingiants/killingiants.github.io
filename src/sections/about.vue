@@ -3,7 +3,7 @@
     <div class="thumb relative flex flex-1 items-center justify-start h-full">
       <img src="/images/about.png">
     </div>
-		<div class="section_content texts text-right flex flex-col items-end ml-auto">
+		<div class="section_content texts text-left flex flex-col items-start ml-auto">
 			<!-- <div class="sm reversed">
 				<p>{{t('sections.about.sm')}}</p>
 			</div> -->
@@ -19,7 +19,7 @@
 			<h1 class="title">{{t('sections.about.title')}}</h1> 
 			<p class="desc big">{{t('sections.about.desc1')}}</p>
 			<p class="desc big">{{t('sections.about.desc2')}}</p>
-			<div class="flex justify-end">
+			<div class="flex justify-start">
 				<td-button class="main-button not-special black" :to="{name: 'contact'}">{{t('sections.about.main_button')}}</td-button>
 			</div>
 		</div>
