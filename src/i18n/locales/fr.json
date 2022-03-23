@@ -31,6 +31,8 @@
 		},
 		"services": {
 			"sm": "Nos services.",
+			"title": "Qu'est-ce que nous offrons .?",
+			"desc1": "Consequuntur mollitia qui voluptas dolores.",
 			"main_button": "Contactez Nous.",
 			"services": {
 				"1": {

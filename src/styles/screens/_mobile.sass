@@ -1,2 +1,176 @@
-#Mobile
-    @apply h-full w-full overflow-scroll
+html, body, #app
+  height: 100%
+  width: 100%
+  overflow: inherit !important
+body
+  overflow-x: hidden !important
+  overflow-y: auto !important
+
+  #AppNavbar
+    @apply flex flex-row justify-between items-center w-full
+    position: fixed
+    top: 0
+    left: 0
+    height: -var(navbar-height)
+    z-index: 1000
+    background: transparent
+
+    .brand
+      @apply h-full
+      cursor: pointer
+      .text
+        @apply font-semibold
+        font-size: -var(title-fs)
+        color: -color(text-ac)
+      &.router-link-exact-active
+        .text
+          color: -color('primary')
+
+    .navbar__
+      @apply hidden
+    
+    button
+      background: transparent
+      box-shadow: none
+      &.theme
+        @include icon($size: 18px, $color: -color(text))
+    .translate
+      position: relative
+      padding-left: 15px
+      margin-left: 5px
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        height: 35%
+        width: 1px
+        background: -color(text)
+
+    &.onTop
+      background: -color(background, .5)
+      backdrop-filter: blur(15px)
+  .app_content
+    display: none !important
+  #Mobile
+    display: block
+
+    .section
+      @apply flex flex-col items-center text-center
+      padding: 50px -var(default-padding)
+
+      .sm
+        text-transform: uppercase !important
+        color: -color(primary)
+      .title
+        font-size: 2rem
+        font-weight: 600
+        max-width: 100% !important
+        margin-bottom: 10px !important
+
+      &#MobileHero
+        @apply justify-center
+        // height: 100vh !important
+        padding-top: 150px
+        .title
+        .td-button
+          height: 35px !important
+          margin-top: 35px !important
+      
+      &#About
+        .img
+          margin-bottom: 50px
+
+      &#services
+        padding-left: 0
+        padding-right: 0
+        button
+          height: 55px
+        .texts
+          padding-right: -var(default-padding)
+          padding-left: -var(default-padding)
+        .services_slides
+          overflow: visible
+          width: 100%
+          margin-top: 85px
+          margin-bottom: 25px
+          .swiper-pagination
+            bottom: auto
+            top: -45px 
+            z-index: 150
+            .swiper-pagination-bullet
+              height: 5px
+              width: 5px
+              transition-duration: .3s
+              &-active
+                width: 25px
+                border-radius: 10px
+                transition-duration: .3s
+          .service
+            text-align: center
+            padding-right: -var(default-padding)
+            padding-left: -var(default-padding)
+            &, .img, img
+              @apply w-full
+            .img
+              position: relative
+              height: 350px
+              margin-bottom: 10px
+              img
+                @apply h-full
+                position: absolute
+                top: 0
+                left: 0
+                object-fit: cover
+            .s-name
+              margin: 25px 0 5px
+              font-size: -var(title-fs)
+              color: -color(text-ac)
+              @apply font-bold
+      
+      &#Contact
+        padding-top: 100px
+        .brands
+          margin: 50px 0 0
+          .brand
+            &:not(:last-child)
+              margin-right: 20px
+            img
+              height: 40px
+              opacity: 0.6
+              backdrop-filter: blur(5px)
+        .sep
+          height: 2px
+          width: 35%
+          background: -color(background-ac)
+          margin-top: 45px
+          margin-bottom: 35px
+        form
+          &, .inputs, .input
+            @apply w-full
+          .inputs, .input
+            @apply flex flex-col
+            input, textarea
+              height: 55px
+              width: 100%
+              background: linear-gradient(to bottom, -color(background-ac, .35), -color(background))
+              color: -color(text-ac) !important
+              padding: 0 15px
+              margin-bottom: 20px
+              text-align: center
+              &:first-child
+                border-radius: 20px 20px 0 0
+            textarea
+              height: 150px
+              padding-top: 15px
+              padding-bottom: 15px
+          button
+            height: 65px
+            border-radius: 20px
+            @apply w-full
+        .socials
+          margin-top: 80px
+          .brand_icon
+            &:not(:last-child)
+              margin-right: 50px

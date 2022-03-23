@@ -3,19 +3,10 @@
     <img src="./assets/vectors/bg.svg" alt="">
   </div>
 
-  <div id="Mobile" class="lg:hidden flex flex-col items-center justify-center text-center">
-    <img src="/images/error.png" width="250" alt="Error img">
-    <h1>Oups !</h1>
-    <p class="max-w-[85%] mt-[5px]" >This section of the site is not available because it is under maintenance. Feel free to check it on the desktop. Thank you and sorry for this inconvenience.</p>
-  </div>
-
-
-
-
-  <div id="AppNavbar">
+  <div id="AppNavbar" class="onTop">
     <router-link :to="{name: 'hero'}" class="brand flex items-center">
       <div class="logo"></div>
-      <p class="text capitalize">.Killing giants</p>
+      <p class="text capitalize">Killing giants.</p>
     </router-link>
     <navbar :links="[
         {text: t('nav_links.about'), name: 'about'},
@@ -37,6 +28,9 @@
       </div>
     </div>
   </div>
+
+  <AppMobile></AppMobile>
+
   <div class="app_content">
     <router-view v-slot="{ Component }">
       <transition v-on:enter="enter"  v-on:leave="leave" v-bind:css="false" appear>
@@ -53,12 +47,15 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from 'vue'
+  import { defineComponent, onMounted, ref } from 'vue'
   import gsap from 'gsap'
   import { useDark, useToggle } from '@vueuse/core'
   import { useI18n } from 'vue-i18n'
   import CountryFlag from 'vue-country-flag-next'
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+  import AppMobile from './AppMobile.vue'
+  //@ts-ignore
+  import $ from 'jquery'
 
   interface Language {
     country: String,
@@ -69,11 +66,12 @@
 
   export default defineComponent({
     components: {
-      CountryFlag,
-      Menu,
-      MenuButton,
-      MenuItem
-    },
+    CountryFlag,
+    Menu,
+    MenuButton,
+    MenuItem,
+    AppMobile
+},
 
     setup() {
       const { t, locale } = useI18n()
@@ -133,6 +131,15 @@
           onComplete: done
         });
       }
+
+			onMounted(() => {
+					console.log('hello')
+					$('window').scroll(function () {
+						console.log('hello')
+						if($('body').scrollTop() >= 65) $('#AppNavbar').addClass('onTop')
+						else $('#AppNavbar').removeClass('onTop')
+					})
+			})
 
       return {
         isDark,
