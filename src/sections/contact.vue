@@ -20,39 +20,39 @@
         <div class="brand_icon"><TelegramIcon></TelegramIcon></div>
       </div>
     </div>
-    <form class="flex flex-col h-full">
+    <form ref="form" class="flex flex-col h-full" @submit.prevent="sendMail">
       <div class="inputs my-auto">
         <div class="input-row">
           <div class="input">
             <label for="c__input_123">First name</label>
-            <input id="c__input_123" type="text">
+            <input id="c__input_123" type="text" v-model="first_name">
           </div>
           <div class="input">
             <label for="c__input_124">Last name</label>
-            <input id="c__input_124" type="text">
+            <input id="c__input_124" type="text" v-model="last_name">
           </div>
         </div>
         <div class="input-row">
           <div class="input">
             <label for="c__input_125">Email address</label>
-            <input id="c__input_125" type="text">
+            <input id="c__input_125" type="text" v-model="email">
           </div>
         </div>
         <div class="input-row">
           <div class="input">
             <label for="c__input_126">Object</label>
-            <input id="c__input_126" type="text">
+            <input id="c__input_126" type="text" v-model="object">
           </div>
         </div>
         <div class="input-row">
           <div class="input">
             <label for="c__input_127">Message</label>
-            <textarea id="c__input_127" type="text" />
+            <textarea id="c__input_127" type="text" v-model="message" />
           </div>
         </div>
       </div>
       <div class="flex justify-end texts mb-[5%] ml-auto">
-        <td-button class="main-button not-special black">
+        <td-button type="submit" :loading="loading" class="main-button not-special black">
           Send.
         </td-button>
       </div>
@@ -60,13 +60,20 @@
   </section>
 </template>
 <script lang="ts">
-  import { defineComponent, onMounted } from 'vue'
+  import { defineComponent, onMounted, ref } from 'vue'
   import gsap from 'gsap'
   import { useI18n } from 'vue-i18n'
+  import emailjs from '@emailjs/browser';
 
   export default defineComponent({
     setup() {
       const { t } = useI18n()
+      const first_name = ref('');
+      const last_name = ref('');
+      const email = ref('');
+      const object = ref('');
+      const message = ref('');
+      const loading = ref(false);
 
       function startEnterAnimation() {
         const sm = '.sm';
@@ -114,11 +121,40 @@
         })
       }
 
+      function sendMail() {
+        loading.value = true;
+
+        const data = {
+          user: `${first_name.value} ${last_name.value}`,
+          reply_to: email.value,
+          object: object.value,
+          message: message.value,
+        }
+        
+        emailjs.send("service_7kl1mxt","template_qksi9pe" , data, "-bwy3OBmO4kVWo8DF")
+        .then(function(response: any) {
+          console.log('SUCCESS!', response.status, response.text);
+
+          first_name.value = '';
+          last_name.value = '';
+          email.value = '';
+          object.value = '';
+          message.value = '';
+
+          alert('Your message has been sent.');
+        }, function(error: any) {
+          console.log('FAILED...', error);
+          alert('Your message has not been sent. please try again !!');
+        });
+
+        loading.value = false;
+      }
+
       onMounted(() => {
         startEnterAnimation()
       });
 
-			return { t }
+			return { t, sendMail, first_name, last_name, email, object, message, loading }
     },
   })
 </script>
